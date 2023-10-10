@@ -1,0 +1,33 @@
+1. SELECT  Name, count(AlbumId) AS Number_of_Albums
+FROM Artist
+JOIN Album
+ON Artist.artistId=Album.ArtistId
+GROUP BY Name
+ORDER BY Number_of_Albums  DESC
+LIMIT 10;
+
+
+2. SELECT MAX(Invoice.Total) AS invoice_total, customer.country AS customer_country
+FROM Invoice
+JOIN Customer
+ON invoice.customerid=customer.CustomerId
+GROUP BY total
+ORDER BY Country
+LIMIT 10;
+
+3. SELECT Title, SUM(track.milliseconds) AS Track_milliseconds
+FROM Album
+JOIN Track
+ON album.albumid=track.AlbumId
+GROUP BY Title
+ORDER BY milliseconds DESC 
+LIMIT 10;
+
+
+4. SELECT MIN(invoice.total) AS invoice_total, customer.city AS customer_city
+FROM Invoice
+JOIN Customer
+ON invoice.customerid=customer.CustomerId
+GROUP BY total
+ORDER BY city
+LIMIT 10;
